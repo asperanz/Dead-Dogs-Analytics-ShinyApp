@@ -1,0 +1,53 @@
+---
+title: "Dead Dogs Analytics"
+author: "Alessandro Speranza"
+date: "12/4/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message = FALSE, warning = FALSE}
+library(here)
+library(tidyverse)
+library(funModeling)
+library(readxl)
+library(leaflet)
+library(leaflet.extras)
+```
+
+```{r}
+# Get data 
+# Using the .xlsx file locally with here() package
+# here::here()
+# dd_concerts <- read_excel(here("data","Dead Dogs Live Concerts.xlsx"), sheet = "Sheet1")
+
+# Or alternatively Using the .csv file stored on github in the Dead Dogs Analytics repository
+dd_concerts <- as_tibble(read.csv(file="https://raw.githubusercontent.com/asperanz/Dead-Dogs-Analytics/master/data/Dead%20Dogs%20Live%20Concerts.csv", header=TRUE, sep=",", stringsAsFactors=FALSE))
+```
+
+
+```{r}
+# Map of concerts
+
+leaflet(dd_concerts) %>% 
+  # addProviderTiles("CartoDB.Positron") %>%
+  #addProviderTiles("CartoDB.DarkMatter") %>%
+  addProviderTiles(providers$Stamen.Toner, group = "Black and white") %>% 
+  addMarkers(~longitude, 
+             ~latitude,
+             popup = paste("<b>Concert:</b>", dd_concerts$concert, "<br>",
+                           "<b>Location:</b>", dd_concerts$location, "<br>",
+                           "<b>Date:</b>", dd_concerts$date,
+                           dd_concerts$playlist),
+             clusterOptions = markerClusterOptions()) %>% 
+  addHeatmap(
+    lng = ~longitude, 
+    lat = ~latitude,
+    radius = 17,
+    blur = 25,
+    cellSize = 25)
+```
+
