@@ -1,0 +1,13 @@
+name: DeadDogsAnalytics
+title: DeadDogsAnalytics
+username:
+account: asperanz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2448115
+bundleId: 7034374
+url: https://asperanz.shinyapps.io/DeadDogsAnalytics/
+when: 1680291316.00689
+lastSyncTime: 1680291316.0069
+asMultiple: FALSE
+asStatic: FALSE

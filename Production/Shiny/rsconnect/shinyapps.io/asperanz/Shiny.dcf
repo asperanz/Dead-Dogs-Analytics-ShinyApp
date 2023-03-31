@@ -1,0 +1,13 @@
+name: Shiny
+title: Shiny
+username:
+account: asperanz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8735337
+bundleId: 7034357
+url: https://asperanz.shinyapps.io/Shiny/
+when: 1680291010.58375
+lastSyncTime: 1680291010.58375
+asMultiple: FALSE
+asStatic: FALSE
