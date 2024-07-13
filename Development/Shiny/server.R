@@ -26,27 +26,30 @@ shinyServer(function(input, output) {
       
         leaflet(filteredData()) %>%
         # Base groups
-        addProviderTiles("CartoDB.Positron", group = "Clear") %>%
+        addProviderTiles(providers$CartoDB.Positron, group = "Clear") %>%
         addProviderTiles(providers$OpenStreetMap.DE, group = "Colour") %>%
-        addProviderTiles(providers$Stamen.Toner, group = "Black and white") %>%
-        addProviderTiles("CartoDB.DarkMatter", group = "Dark") %>%
+        addProviderTiles(providers$Stadia.StamenToner, group = "Black and white") %>%
+        addProviderTiles(providers$CartoDB.DarkMatter, group = "Dark") %>%
         # Overlay groups
-        addMarkers(~longitude, 
-                   ~latitude,
-                   label = ~concert,
-                   popup = ~popupcontent,
-                   clusterOptions = markerClusterOptions()) %>% 
-        addHeatmap(
-          lng = ~longitude, 
-          lat = ~latitude,
-          radius = 17,
-          blur = 25,
-          cellSize = 25) %>%
-        addMiniMap(tiles = providers$Esri.WorldStreetMap,
-                   minimized = FALSE,
-                   position = "bottomleft") %>%
-        addLayersControl(baseGroups = c("Clear", "Colour", "Black and white", "Dark"),
-                         position = "bottomright")
+        addMarkers(~longitude 
+                  ,~latitude
+                  ,label = ~concert
+                  ,popup = ~popupcontent
+                  ,clusterOptions = markerClusterOptions()
+                  ) %>% 
+        addHeatmap(lng = ~longitude 
+                  ,lat = ~latitude
+                  ,blur = 20
+                  ,max = 0.05
+                  ,radius = 15
+                  # ,gradient = "Spectral"
+                  ) %>%
+        addMiniMap(tiles = providers$Esri.WorldStreetMap
+                  ,minimized = FALSE
+                  ,position = "bottomleft"
+                  ) %>%
+        addLayersControl(baseGroups = c("Clear", "Colour", "Black and white", "Dark")
+                        ,position = "bottomright")
       
     })
     
@@ -56,22 +59,25 @@ shinyServer(function(input, output) {
       leafletProxy("map", data = filteredData()) %>%
         clearMarkers() %>%
         # Overlay groups
-        addMarkers(~longitude, 
-                   ~latitude,
-                   label = ~concert,
-                   popup = ~popupcontent,
-                   clusterOptions = markerClusterOptions()) %>% 
-        addHeatmap(
-          lng = ~longitude, 
-          lat = ~latitude,
-          radius = 17,
-          blur = 25,
-          cellSize = 25) %>% 
-        addMiniMap(tiles = providers$Esri.WorldStreetMap,
-                   minimized = FALSE,
-                   position = "bottomleft") %>%
-        addLayersControl(baseGroups = c("Clear", "Colour", "Black and white", "Dark"),
-                         position = "topleft")
+        addMarkers(~longitude 
+                  ,~latitude
+                  ,label = ~concert
+                  ,popup = ~popupcontent
+                  ,clusterOptions = markerClusterOptions()
+                  ) %>% 
+        addHeatmap(lng = ~longitude 
+                   ,lat = ~latitude
+                   ,blur = 20
+                   ,max = 0.05
+                   ,radius = 15
+                   # ,gradient = "Spectral"
+                  ) %>% 
+        addMiniMap(tiles = providers$Esri.WorldStreetMap
+                   ,minimized = FALSE
+                   ,position = "bottomleft"
+                  ) %>%
+        addLayersControl(baseGroups = c("Clear", "Colour", "Black and white", "Dark")
+                        ,position = "topleft")
       
     })
 })
