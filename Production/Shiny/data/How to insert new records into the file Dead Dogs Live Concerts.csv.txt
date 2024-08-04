@@ -1,5 +1,11 @@
 *****  HOW TO INSERT NEW RECORDS INTO THE FILE DEAD DOGS LIVE CONCERTS.CSV *****
 
+
+->>> To modify the csv file USE NOTEPAD ++ ONLY!!!!  NOT EXCEL! 
+
+
+STEPS
+
 1. From Notepad ++, open the file Dead Dogs Live Concerts.csv
 
 2. Add new lines about new concerts and save the file
