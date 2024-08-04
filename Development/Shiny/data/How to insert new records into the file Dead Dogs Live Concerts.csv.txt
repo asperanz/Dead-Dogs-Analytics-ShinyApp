@@ -1,0 +1,7 @@
+*****  HOW TO INSERT NEW RECORDS INTO THE FILE DEAD DOGS LIVE CONCERTS.CSV *****
+
+1. From Notepad ++, open the file Dead Dogs Live Concerts.csv
+
+2. Add new lines about new concerts and save the file
+
+3. Commit and push the file to github
