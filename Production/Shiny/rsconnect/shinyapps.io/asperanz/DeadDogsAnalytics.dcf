@@ -5,8 +5,8 @@ account: asperanz
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2448115
-bundleId: 8860074
+bundleId: 8945185
 url: https://asperanz.shinyapps.io/DeadDogsAnalytics/
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: data/Dead Dogs Live Concerts - Extended.xlsx|data/Dead Dogs Live Concerts.xlsx
+ignoredFiles: data/Dead Dogs Live Concerts - Extended.xlsx|data/How to insert new records into the file Dead Dogs Live Concerts.csv.txt
