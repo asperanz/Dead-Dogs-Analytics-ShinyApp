@@ -5,7 +5,7 @@ account: asperanz
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2448115
-bundleId: 8945185
+bundleId: 9250976
 url: https://asperanz.shinyapps.io/DeadDogsAnalytics/
 asMultiple: FALSE
 asStatic: FALSE
