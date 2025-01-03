@@ -6,7 +6,7 @@
 
 STEPS
 
-1. From Notepad ++, open the file Dead Dogs Live Concerts.csv
+1. Open the file Dead Dogs Live Concerts.csv with Notepad ++
 
 2. Add new lines about new concerts and save the file
 
